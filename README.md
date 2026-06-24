@@ -69,40 +69,16 @@ Successfully collected Windows Event Logs into Microsoft Sentinel through Azure 
 
 #### View Security Events
 
-```kql
-Event
-| where EventLog == "Security"
-| take 20
-Count Events by Source
-Kql
-Event
-| summarize Count=count() by Source
-| sort by Count desc
-Count Events by Event Level
-Kql
-Event
-| summarize Count=count() by EventLevelName
-Count Events by Event ID
-Kql
-Event
-| summarize Count=count() by EventID
-| sort by Count desc
-Detect Privileged Logon Activity
-Kql
-Event
-| where EventID == 4672
-| take 20
-7. Detection Engineering
-Designed a Microsoft Sentinel Analytics Rule for:
-Event ID 4672 Detection
-Special Privileges Assigned to New Logon
-Medium Severity
-MITRE ATT&CK: Privilege Escalation
-8. Security Monitoring Activities
-Performed:
-Windows Event Log Monitoring
-Event Source Analysis
-Event Severity Analysis
-Event ID Analysis
-Privileged Activity Detection
-KQL-based Log Investigation
+• Event | where EventLog == "Security"| take 20
+
+• Event | summarize Count=count() by Source | sort by Count desc
+
+• Event | summarize Count=count() by EventLevelName
+
+• Event | summarize Count=count() by EventID | sort by Count desc
+
+• Event | where EventID == 4672 | take 20
+
+• Event | where EventID == 4624 | take 20
+
+• Event | where EventID == 4625 | take 20
