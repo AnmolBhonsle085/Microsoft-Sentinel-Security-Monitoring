@@ -69,7 +69,7 @@ Successfully collected Windows Event Logs into Microsoft Sentinel through Azure 
 
 #### View Security Events
 
-• Event | where EventLog == "Security"| take 20
+• Event | where EventLog == "Security" | take 20
 
 • Event | summarize Count=count() by Source | sort by Count desc
 
