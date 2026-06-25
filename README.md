@@ -75,8 +75,6 @@ Successfully collected Windows Event Logs into Microsoft Sentinel through Azure 
 
 • Event | summarize Count=count() by EventLevelName
 
-• Event | summarize Count=count() by Source | sortby Count desc
-
 • Event | summarize Count=count() by EventID | sort by Count desc
 
 • Event | where EventID == 4672 | take 20
